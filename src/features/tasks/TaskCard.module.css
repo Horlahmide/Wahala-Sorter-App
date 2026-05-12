@@ -1,0 +1,93 @@
+.card {
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-default);
+  padding: var(--spacing-4); /* inner card padding md = 16px */
+  box-shadow: var(--shadow-level-1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  position: relative;
+  touch-action: none; /* Important for dnd-kit on mobile */
+  margin-bottom: var(--spacing-3);
+}
+
+.isDraggingSlot {
+  background-color: transparent;
+  border: 1px dashed var(--color-outline);
+  box-shadow: none;
+  opacity: 0.5;
+  height: 100px; /* Approximate height to hold space */
+}
+
+.isOverlay {
+  box-shadow: var(--shadow-level-2);
+  opacity: 0.9;
+  transform: scale(1.02) rotate(2deg);
+  cursor: grabbing;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-2);
+}
+
+.title {
+  font-size: var(--font-size-body-md);
+  font-weight: 600; /* bold */
+  color: var(--color-on-surface);
+  line-height: var(--line-height-body-md);
+  margin: 0;
+  word-break: break-word;
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  padding: var(--spacing-1);
+  color: var(--color-outline);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.deleteButton:hover {
+  background-color: var(--color-error-container);
+  color: var(--color-on-error-container);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-on-surface-variant);
+}
+
+.dragHandle {
+  color: var(--color-outline);
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-1);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.dragHandle:hover {
+  background-color: var(--color-surface-container);
+  color: var(--color-on-surface);
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+}

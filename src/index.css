@@ -1,0 +1,135 @@
+:root {
+  /* Colors */
+  --color-surface: #fdf8ff;
+  --color-surface-dim: #ddd8e0;
+  --color-surface-bright: #fdf8ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f7f2fa;
+  --color-surface-container: #f1ecf4;
+  --color-surface-container-high: #ebe6ee;
+  --color-surface-container-highest: #e6e1e9;
+  --color-on-surface: #1c1b20;
+  --color-on-surface-variant: #494551;
+  --color-inverse-surface: #312f35;
+  --color-inverse-on-surface: #f4eff7;
+  --color-outline: #7a7582;
+  --color-outline-variant: #cbc4d2;
+  --color-surface-tint: #6750a4;
+  --color-primary: #4f388a;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #6750a4;
+  --color-on-primary-container: #e0d2ff;
+  --color-inverse-primary: #cfbdff;
+  --color-secondary: #63597c;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #e0d4fd;
+  --color-on-secondary-container: #635a7c;
+  --color-tertiary: #765b00;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #c9a74d;
+  --color-on-tertiary-container: #503d00;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-primary-fixed: #e9ddff;
+  --color-primary-fixed-dim: #cfbdff;
+  --color-background: #fdf8ff;
+  --color-on-background: #1c1b20;
+  --color-surface-variant: #e6e1e9;
+
+  /* Custom Accents mentioned in the design doc */
+  --color-now-accent: #8069bf;
+  --color-soon-accent: #7c7296;
+  --color-later-accent: #cbc4d2;
+
+  /* Typography */
+  --font-family-sans: Geist, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  --font-size-display: 32px;
+  --font-weight-display: 600;
+  --line-height-display: 1.2;
+  --letter-spacing-display: -0.02em;
+
+  --font-size-h1: 24px;
+  --font-weight-h1: 600;
+  --line-height-h1: 1.3;
+  --letter-spacing-h1: -0.01em;
+
+  --font-size-h2: 20px;
+  --font-weight-h2: 600;
+  --line-height-h2: 1.4;
+
+  --font-size-body-lg: 16px;
+  --font-weight-body-lg: 400;
+  --line-height-body-lg: 1.6;
+
+  --font-size-body-md: 14px;
+  --font-weight-body-md: 400;
+  --line-height-body-md: 1.5;
+
+  --font-size-body-sm: 13px;
+  --font-weight-body-sm: 400;
+  --line-height-body-sm: 1.5;
+
+  --font-size-label-md: 12px;
+  --font-weight-label-md: 500;
+  --line-height-label-md: 1.2;
+  --letter-spacing-label-md: 0.05em;
+
+  /* Spacing (8px rhythmic grid) */
+  --spacing-1: 0.25rem; /* 4px */
+  --spacing-2: 0.5rem;  /* 8px */
+  --spacing-3: 0.75rem; /* 12px */
+  --spacing-4: 1rem;    /* 16px */
+  --spacing-5: 1.25rem; /* 20px */
+  --spacing-6: 1.5rem;  /* 24px */
+  --spacing-8: 2rem;    /* 32px */
+
+  /* Rounded */
+  --radius-sm: 0.25rem;
+  --radius-default: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-level-1: 0px 2px 4px rgba(0,0,0,0.04);
+  --shadow-level-2: 0px 12px 24px rgba(0,0,0,0.08);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-sans);
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  font-size: var(--font-size-body-md);
+  font-weight: var(--font-weight-body-md);
+  line-height: var(--line-height-body-md);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: var(--color-on-surface);
+}
+
+p {
+  margin: 0;
+}
+
+button, input {
+  font-family: inherit;
+  margin: 0;
+}
