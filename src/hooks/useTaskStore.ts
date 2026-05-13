@@ -20,7 +20,17 @@ export function useTaskStore() {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
   }, [tasks]);
 
-  const addTask = useCallback((title: string, status: ColumnId = "soon") => {
+  // const addTask = useCallback((title: string, status: ColumnId = "soon") => {
+  //   const newTask: Task = {
+  //     id: uuidv4(),
+  //     title,
+  //     status,
+  //     createdAt: Date.now(),
+  //   };
+  //   setTasks((prev) => [...prev, newTask]);
+  // }, []);
+
+  const addTask = (title: string, status: ColumnId = "soon") => {
     const newTask: Task = {
       id: uuidv4(),
       title,
@@ -28,7 +38,7 @@ export function useTaskStore() {
       createdAt: Date.now(),
     };
     setTasks((prev) => [...prev, newTask]);
-  }, []);
+  };
 
   const updateTaskStatus = useCallback((id: string, newStatus: ColumnId) => {
     setTasks((prev) =>
