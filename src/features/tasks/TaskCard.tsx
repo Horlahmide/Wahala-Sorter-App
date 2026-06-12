@@ -1,9 +1,9 @@
-import { useSortable } from '@dnd-kit/sortable';
-import { CSS } from '@dnd-kit/utilities';
-import type { Task } from '../../types';
-import styles from './TaskCard.module.css';
-import { GripVertical, Trash2 } from 'lucide-react';
-import { Button } from '../../components/ui/Button';
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+import type { Task } from "../../types";
+import styles from "./TaskCard.module.css";
+import { GripVertical, Trash2 } from "lucide-react";
+
 
 interface TaskCardProps {
   task: Task;
@@ -22,7 +22,7 @@ export function TaskCard({ task, onDelete, isOverlay }: TaskCardProps) {
   } = useSortable({
     id: task.id,
     data: {
-      type: 'Task',
+      type: "Task",
       task,
     },
   });
@@ -33,8 +33,8 @@ export function TaskCard({ task, onDelete, isOverlay }: TaskCardProps) {
   };
 
   const formattedDate = new Date(task.createdAt).toLocaleDateString(undefined, {
-    month: 'short',
-    day: 'numeric',
+    month: "short",
+    day: "numeric",
   });
 
   if (isDragging && !isOverlay) {
@@ -51,7 +51,7 @@ export function TaskCard({ task, onDelete, isOverlay }: TaskCardProps) {
     <div
       ref={setNodeRef}
       style={style}
-      className={`${styles.card} ${isOverlay ? styles.isOverlay : ''}`}
+      className={`${styles.card} ${isOverlay ? styles.isOverlay : ""}`}
     >
       <div className={styles.header}>
         <h3 className={styles.title}>{task.title}</h3>
@@ -60,7 +60,7 @@ export function TaskCard({ task, onDelete, isOverlay }: TaskCardProps) {
             type="button"
             className={styles.deleteButton}
             onClick={() => onDelete(task.id)}
-            aria-label="Delete task"
+            aria-label={`Delete task: ${task.title}`}
           >
             <Trash2 size={16} />
           </button>
@@ -68,14 +68,15 @@ export function TaskCard({ task, onDelete, isOverlay }: TaskCardProps) {
       </div>
       <div className={styles.footer}>
         <span className={styles.date}>{formattedDate}</span>
-        <div
+        <button
+          type="button"
           className={styles.dragHandle}
           {...attributes}
           {...listeners}
-          aria-label="Drag task"
+          aria-label="Drag to reorder task"
         >
           <GripVertical size={16} />
-        </div>
+        </button>
       </div>
     </div>
   );

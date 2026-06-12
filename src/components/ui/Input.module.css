@@ -1,13 +1,13 @@
 .input {
   display: block;
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container-lowest);
   border: 1px solid var(--color-outline-variant);
-  border-radius: var(--radius-default);
-  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-full);
+  padding: var(--spacing-3) var(--spacing-4);
   font-family: var(--font-family-sans);
   font-size: var(--font-size-body-md);
   color: var(--color-on-surface);
-  transition: all var(--transition-fast);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
   outline: none;
 }
 
@@ -17,7 +17,8 @@
 
 .input:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px rgba(103, 80, 164, 0.2); /* Soft 2px glow of primary (6750a4 in RGB) */
+  box-shadow: 0 0 0 4px rgba(103, 80, 164, 0.15); /* More diffused glow */
+  transform: translateY(-1px);
 }
 
 .input:disabled {

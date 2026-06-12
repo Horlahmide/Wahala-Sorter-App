@@ -1,8 +1,8 @@
 .card {
   background-color: var(--color-surface-container-lowest);
-  border: 1px solid var(--color-outline-variant);
-  border-radius: var(--radius-default);
-  padding: var(--spacing-4); /* inner card padding md = 16px */
+  border: 1px solid var(--color-surface-container-highest);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-5); /* more breathing room */
   box-shadow: var(--shadow-level-1);
   display: flex;
   flex-direction: column;
@@ -10,21 +10,30 @@
   position: relative;
   touch-action: none; /* Important for dnd-kit on mobile */
   margin-bottom: var(--spacing-3);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-level-2);
+  border-color: var(--color-primary-fixed-dim);
 }
 
 .isDraggingSlot {
   background-color: transparent;
-  border: 1px dashed var(--color-outline);
+  border: 2px dashed var(--color-outline-variant);
+  border-radius: var(--radius-lg);
   box-shadow: none;
-  opacity: 0.5;
+  opacity: 0.4;
   height: 100px; /* Approximate height to hold space */
 }
 
 .isOverlay {
-  box-shadow: var(--shadow-level-2);
-  opacity: 0.9;
-  transform: scale(1.02) rotate(2deg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12); /* pronounced shadow */
+  opacity: 0.95;
+  transform: scale(1.04) rotate(3deg);
   cursor: grabbing;
+  border-color: var(--color-primary);
 }
 
 .header {

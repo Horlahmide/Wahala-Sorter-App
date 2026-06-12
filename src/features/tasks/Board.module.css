@@ -8,23 +8,28 @@
 
 .boardHeader {
   margin-bottom: var(--spacing-6);
+  text-align: center;
 }
 
 .boardTitle {
-  font-size: var(--font-size-display);
-  font-weight: var(--font-weight-display);
-  letter-spacing: var(--letter-spacing-display);
-  color: var(--color-on-surface);
+  font-size: 3rem; /* slightly larger than var(--font-size-display) for impact */
+  font-weight: 700; /* bold */
+  letter-spacing: -0.03em; /* tighter letter spacing */
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-1);
 }
 
 .boardSubtitle {
   color: var(--color-on-surface-variant);
   font-size: var(--font-size-body-lg);
-  margin-top: var(--spacing-1);
+  font-weight: 500;
+  margin-top: 0;
+  opacity: 0.9;
 }
 
 .columnsContainer {
   display: flex;
+  justify-content: center;
   gap: var(--spacing-6);
   overflow-x: auto;
   flex-grow: 1;
@@ -50,6 +55,7 @@
 @media (max-width: 768px) {
   .columnsContainer {
     flex-direction: column;
+    align-items: center;
     overflow-x: hidden;
     overflow-y: auto;
   }
