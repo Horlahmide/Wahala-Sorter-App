@@ -1,7 +1,7 @@
-import { useState, FormEvent, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, type FormEvent } from "react";
 import { Button } from "../../components/ui/Button";
 import { Input } from "../../components/ui/Input";
-import { Plus, X } from "lucide-react";
+import { Plus } from "lucide-react";
 import styles from "./AddTaskForm.module.css";
 
 interface AddTaskFormProps {
